@@ -1,0 +1,431 @@
+/* ==========================================================================
+   VINAYAK FASHION — LUXURY INDIAN COUTURE DESIGN SYSTEM
+   Indian Tradition + Modern Luxury + Fashion Editorial + 3D Web Experience
+   ========================================================================== */
+
+:root {
+  /* Royal Color Palette */
+  --bg-dark: #0D090A;
+  --bg-dark-elevated: #161012;
+  --bg-burgundy: #2B080E;
+  --bg-burgundy-deep: #1E0509;
+  --bg-burgundy-light: #440D17;
+  
+  --bg-ivory: #FAF7F2;
+  --bg-cream: #F4EFE6;
+  --bg-beige: #ECE4D5;
+  --bg-card: rgba(22, 16, 18, 0.72);
+  --bg-card-hover: rgba(35, 20, 24, 0.9);
+
+  /* Gold Metallics & Accents */
+  --gold-primary: #D4AF37;
+  --gold-light: #F7E5A9;
+  --gold-muted: #B8923A;
+  --gold-dark: #8C661D;
+  --gold-glow: rgba(212, 175, 55, 0.28);
+  --gold-gradient: linear-gradient(135deg, #BF953F 0%, #FCF6BA 35%, #B38728 65%, #FBF5B7 85%, #AA771C 100%);
+  --gold-gradient-soft: linear-gradient(135deg, rgba(212, 175, 55, 0.85) 0%, rgba(247, 229, 169, 0.95) 50%, rgba(184, 146, 58, 0.85) 100%);
+  --gold-shimmer: linear-gradient(90deg, #D4AF37 0%, #FFF3C4 50%, #D4AF37 100%);
+
+  /* Text Colors */
+  --text-primary: #F9F6F0;
+  --text-secondary: #D1C5B4;
+  --text-muted: #9E9182;
+  --text-dark: #1A1415;
+  --text-dark-secondary: #4A3E39;
+  --text-gold: #E5C365;
+
+  /* Borders & Dividers */
+  --border-gold-subtle: rgba(212, 175, 55, 0.22);
+  --border-gold-bright: rgba(212, 175, 55, 0.55);
+  --border-dark-subtle: rgba(255, 255, 255, 0.08);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-display: 'Cinzel', 'Playfair Display', serif;
+  --font-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Shadows & Glassmorphism */
+  --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-luxury: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 25px rgba(212, 175, 55, 0.08);
+  --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.25);
+  --glass-bg: rgba(18, 12, 14, 0.75);
+  --glass-blur: blur(16px);
+
+  /* Transitions */
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.25s var(--ease-luxury);
+  --transition-smooth: 0.45s var(--ease-luxury);
+  --transition-slow: 0.8s var(--ease-luxury);
+}
+
+/* ==========================================================================
+   Base & Resets
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(68, 13, 23, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 85% 65%, rgba(68, 13, 23, 0.2) 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Luxury Traditional Indian Pattern Backdrop (Subtle Silk / Mandala Watermark) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Selection Highlight */
+::selection {
+  background-color: var(--gold-primary);
+  color: #1A0508;
+}
+
+/* Image defaults */
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   Typography Utilities
+   ========================================================================== */
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.gold-gradient-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gold-shimmer-text {
+  background: linear-gradient(90deg, #D4AF37 0%, #FFF4CC 45%, #D4AF37 90%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shineText 5s linear infinite;
+}
+
+@keyframes shineText {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section-label::before,
+.section-label::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold-primary);
+  opacity: 0.7;
+}
+
+.section-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.75rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: var(--text-secondary);
+  max-width: 640px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Luxury Traditional Indian Decorative Motifs
+   ========================================================================== */
+
+.mandala-motif {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1.5rem;
+  opacity: 0.85;
+}
+
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 2.5rem auto;
+  width: 100%;
+  max-width: 320px;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.gold-diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--gold-primary);
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px var(--gold-glow);
+}
+
+/* ==========================================================================
+   Buttons & CTAs
+   ========================================================================== */
+
+.btn-luxury {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 14px 34px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #1A070B;
+  background: var(--gold-gradient);
+  border: 1px solid var(--gold-light);
+  overflow: hidden;
+  transition: all var(--transition-smooth);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 175, 55, 0.2);
+  z-index: 1;
+}
+
+.btn-luxury::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.6s;
+  z-index: -1;
+}
+
+.btn-luxury:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.45);
+  color: #0F0407;
+}
+
+.btn-luxury:hover::before {
+  left: 100%;
+}
+
+.btn-luxury-outline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 13px 32px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: rgba(22, 13, 16, 0.6);
+  border: 1px solid var(--border-gold-bright);
+  backdrop-filter: blur(8px);
+  transition: all var(--transition-smooth);
+}
+
+.btn-luxury-outline:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.btn-editorial-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold-primary);
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border-gold-subtle);
+  transition: all var(--transition-fast);
+}
+
+.btn-editorial-link:hover {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold-primary);
+  gap: 16px;
+}
+
+/* ==========================================================================
+   Container & Layout
+   ========================================================================== */
+
+.site-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 4rem);
+}
+
+.site-section {
+  position: relative;
+  padding: clamp(4.5rem, 8vw, 8rem) 0;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Custom Fashion Cursor (Desktop Only)
+   ========================================================================== */
+
+.custom-cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: var(--gold-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  transition: opacity 0.2s ease;
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--gold-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 99998;
+  transition: width 0.3s var(--ease-luxury), height 0.3s var(--ease-luxury), border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.custom-cursor-ring.cursor-hover {
+  width: 60px;
+  height: 60px;
+  border-color: var(--gold-light);
+  background-color: rgba(212, 175, 55, 0.08);
+}
+
+@media (pointer: coarse) or (max-width: 1024px) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   Scrollbar Styling
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #38241E;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-muted);
+}

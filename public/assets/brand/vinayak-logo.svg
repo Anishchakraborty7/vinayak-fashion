@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" width="100%" height="100%">
+  <defs>
+    <!-- Royal Metallic Gold Linear Gradient -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C59B3F" />
+      <stop offset="25%" stop-color="#EED58E" />
+      <stop offset="50%" stop-color="#FBF2B7" />
+      <stop offset="75%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#9A7424" />
+    </linearGradient>
+
+    <!-- Deep Warm Gold Gradient -->
+    <linearGradient id="deepGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#AA771C" />
+      <stop offset="50%" stop-color="#FDF6C7" />
+      <stop offset="100%" stop-color="#996515" />
+    </linearGradient>
+
+    <!-- Subtle Glow Filter -->
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Traditional Royal Indian Insignia / Crest -->
+  <g transform="translate(42, 60)">
+    <!-- Outer Sacred Kalash & Mandala Arch -->
+    <path d="M 0 -38 C 18 -38 32 -22 32 0 C 32 18 16 34 0 38 C -16 34 -32 18 -32 0 C -32 -22 -18 -38 0 -38 Z" 
+          fill="none" stroke="url(#goldGradient)" stroke-width="1.8" opacity="0.9"/>
+    
+    <!-- Inner Floral Petals -->
+    <circle cx="0" cy="0" r="24" fill="none" stroke="url(#goldGradient)" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.7"/>
+    
+    <!-- Central Royal Lotus Motif -->
+    <path d="M 0 16 C 5 8 12 2 12 -8 C 8 -5 4 -3 0 4 C -4 -3 -8 -5 -12 -8 C -12 2 -5 8 0 16 Z" 
+          fill="url(#goldGradient)" opacity="0.95"/>
+    <path d="M 0 -18 C 3 -10 6 -4 0 2 C -6 -4 -3 -10 0 -18 Z" 
+          fill="url(#goldGradient)"/>
+    <circle cx="0" cy="-21" r="2" fill="url(#goldGradient)"/>
+    <circle cx="0" cy="21" r="1.5" fill="url(#goldGradient)"/>
+
+    <!-- Decorative Flanking Wings / Zari Flourishes -->
+    <path d="M -32 0 Q -42 -12 -40 -24 Q -34 -14 -25 -6" fill="none" stroke="url(#goldGradient)" stroke-width="1.2" opacity="0.8"/>
+    <path d="M 32 0 Q 42 -12 40 -24 Q 34 -14 25 -6" fill="none" stroke="url(#goldGradient)" stroke-width="1.2" opacity="0.8"/>
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(105, 0)">
+    <!-- Primary Title: VINAYAK -->
+    <text x="0" y="58" 
+          font-family="'Playfair Display', 'Cinzel', 'Georgia', serif" 
+          font-size="36" 
+          font-weight="700" 
+          letter-spacing="5" 
+          fill="url(#goldGradient)"
+          filter="url(#goldGlow)">
+      VINAYAK
+    </text>
+
+    <!-- Secondary Line: FASHION with flanking hairline accents -->
+    <text x="3" y="86" 
+          font-family="'Plus Jakarta Sans', 'Montserrat', sans-serif" 
+          font-size="13" 
+          font-weight="500" 
+          letter-spacing="10" 
+          fill="#EDE4D3" 
+          opacity="0.95">
+      FASHION
+    </text>
+
+    <!-- Traditional Luxury Micro Subtitle & Divider -->
+    <line x1="2" y1="97" x2="280" y2="97" stroke="url(#goldGradient)" stroke-width="0.8" opacity="0.5"/>
+    <polygon points="140,95.5 143,97 140,98.5 137,97" fill="url(#goldGradient)"/>
+
+    <text x="3" y="110" 
+          font-family="'Plus Jakarta Sans', sans-serif" 
+          font-size="8.5" 
+          font-weight="400" 
+          letter-spacing="3.5" 
+          fill="#C4B5A0" 
+          opacity="0.85">
+      TRADITION, REIMAGINED
+    </text>
+  </g>
+</svg>
